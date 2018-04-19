@@ -9,9 +9,13 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
+import android.widget.Toast;
 
 import com.zhy.customeview03.R;
 
+/**
+ * 思路    先使用drawCircle()画一个圆圈  然后再换一个圆环  用一个定时器刷新界面
+ */
 public class CustomProgressBar extends View {
     /**
      * 第一圈的颜色
@@ -60,7 +64,7 @@ public class CustomProgressBar extends View {
      * @param attrs
      * @param defStyle
      */
-    public CustomProgressBar(Context context, AttributeSet attrs, int defStyle) {
+    public CustomProgressBar(final Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CustomProgressBar, defStyle, 0);
         int n = a.getIndexCount();
@@ -105,9 +109,14 @@ public class CustomProgressBar extends View {
                     }
                 }
             }
-
-            ;
         }.start();
+
+        this.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, "点击了", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
