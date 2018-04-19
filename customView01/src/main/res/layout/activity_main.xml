@@ -13,7 +13,6 @@
         android:padding="20dp"
         custom:textBackground="@color/colorAccent"
         custom:textColor="#000"
-        custom:textContent="1234"
-        custom:textSize="40sp" />
+        custom:textContent="1234"/>
 
 </RelativeLayout>

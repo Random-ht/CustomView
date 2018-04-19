@@ -16,15 +16,16 @@ public class CustomProgressBar extends View {
     /**
      * 第一圈的颜色
      */
-    private int mFirstColor;
+    private int mFirstColor = Color.GREEN;
     /**
      * 第二圈的颜色
      */
-    private int mSecondColor;
+    private int mSecondColor = Color.RED;
     /**
      * 圈的宽度
      */
-    private int mCircleWidth;
+    private int mCircleWidth = (int) TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_PX, 20, getResources().getDisplayMetrics());
     /**
      * 画笔
      */
@@ -37,7 +38,7 @@ public class CustomProgressBar extends View {
     /**
      * 速度
      */
-    private int mSpeed;
+    private int mSpeed = 20;
 
     /**
      * 是否应该开始下一个

@@ -22,13 +22,12 @@ import java.util.Set;
  * Created by hutao on 2018/4/19.
  * 自定义属性
  */
-
 public class CustomView extends View {
 
-    private String textContent;
-    private int textColor;
-    private int background;
-    private int textSize;
+    private String textContent = "默认值";
+    private int textColor = Color.GREEN;//默认文字颜色值
+    private int background = Color.YELLOW;//默认背景图
+    private int textSize = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 16, getResources().getDisplayMetrics());
     private Paint paint;
     private Rect rect;
 
@@ -42,6 +41,7 @@ public class CustomView extends View {
 
     public CustomView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.CustomView, defStyleAttr, 0);
         int indexCount = typedArray.getIndexCount();//获取总共几个自定义的属性
         for (int i = 0; i < indexCount; i++) {
@@ -51,7 +51,7 @@ public class CustomView extends View {
                     textContent = typedArray.getString(index);
                     break;
                 case R.styleable.CustomView_textColor:
-                    textColor = typedArray.getColor(index, Color.GREEN);
+                    textColor = typedArray.getColor(index, Color.GREEN);//这里并不能设置默认值  因为当不设置textColor的时候根本走不到这一步
                     break;
                 case R.styleable.CustomView_textSize:
                     textSize = typedArray.getDimensionPixelSize(index, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 16, getResources().getDisplayMetrics()));

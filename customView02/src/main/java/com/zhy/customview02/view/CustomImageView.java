@@ -40,15 +40,16 @@ public class CustomImageView extends View {
     /**
      * 图片的介绍
      */
-    private String mTitle;
+    private String mTitle = "HelloWorld";
     /**
      * 字体的颜色
      */
-    private int mTextColor;
+    private int mTextColor = Color.RED;
     /**
      * 字体的大小
      */
-    private int mTextSize;
+    private int mTextSize = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,
+            16, getResources().getDisplayMetrics());
 
     private Paint mPaint;
     /**
@@ -117,7 +118,6 @@ public class CustomImageView extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        // super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
         /**
          * 设置宽度
@@ -169,7 +169,7 @@ public class CustomImageView extends View {
         /**
          * 边框
          */
-        mPaint.setStrokeWidth(4);
+        mPaint.setStrokeWidth(10);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setColor(Color.CYAN);
         canvas.drawRect(0, 0, getMeasuredWidth(), getMeasuredHeight(), mPaint);
