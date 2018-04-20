@@ -1,4 +1,4 @@
-package com.random.customdemo;
+package com.gcssloop.graphics;
 
 import org.junit.Test;
 
