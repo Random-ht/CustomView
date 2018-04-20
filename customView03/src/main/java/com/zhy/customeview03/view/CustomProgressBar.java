@@ -140,7 +140,6 @@ public class CustomProgressBar extends View {
             mPaint.setColor(mFirstColor); // 设置圆环的颜色
             canvas.drawArc(oval, -90, mProgress, false, mPaint); // 根据进度画圆弧
         }
-
     }
 
 }

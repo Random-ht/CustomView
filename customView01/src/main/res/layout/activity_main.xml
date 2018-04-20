@@ -13,6 +13,14 @@
         android:padding="20dp"
         custom:textBackground="@color/colorAccent"
         custom:textColor="#000"
-        custom:textContent="1234"/>
+        custom:textContent="1234" />
 
+    <TextView
+        android:id="@+id/next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="画太极" />
 </RelativeLayout>

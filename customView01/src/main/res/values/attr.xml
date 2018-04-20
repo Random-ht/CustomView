@@ -4,7 +4,7 @@
         <attr name="textContent" />
         <attr name="textColor" />
         <attr name="textSize" />
-        <attr name="textBackground"/>
+        <attr name="textBackground" />
     </declare-styleable>
 
     <attr name="textContent" format="string" />
